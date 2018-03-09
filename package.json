@@ -7,7 +7,7 @@
         "lint": "eslint ./src/**/*",
         "lintFix": "eslint ./src/**/* --fix",
         "start": "node index.js",
-        "test": "NODE_ENV=test nyc --reporter=lcov  --reporter=text --check-coverage --lines 100 --functions 100 --branches 100 mocha --recursive ./test",
+        "test": "NODE_ENV=test nyc --reporter=lcov  --reporter=text --check-coverage --lines 100 --functions 100 --branches 100 mocha --recursive ./tests",
         "update": "./node_modules/npm-check-updates/bin/ncu -a"
     },
     "repository": {
@@ -21,13 +21,13 @@
     },
     "homepage": "https://github.com/oreillymedia/cloud-function-template#readme",
     "dependencies": {
-        "mocha": "^4.0.1",
-        "nyc": "^11.4.1",
+        "request": "^2.83.0",
         "request-promise": "^4.2.2"
     },
     "devDependencies": {
-        "bunyan-prettystream": "^0.1.3",
         "eslint": "^4.10.0",
+        "mocha": "^4.0.1",
+        "nyc": "^11.4.1",
         "npm-check-updates": "^2.12.1"
     }
 }
