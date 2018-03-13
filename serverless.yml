@@ -17,9 +17,12 @@ package:
     - node_modules/**
     - .gitignore
     - .git/**
+    - .eslintrc
+    - .gcloudignore
+    - tests/**
 
 functions:
-  first:
+  function_name:
     handler: http
     events:
       - http: path
