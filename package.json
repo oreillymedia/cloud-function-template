@@ -4,8 +4,8 @@
     "description": "cloud-function-template",
     "main": "index.js",
     "scripts": {
-        "lint": "eslint ./src/**/*",
-        "lintFix": "eslint ./src/**/* --fix",
+        "lint": "eslint ./index.js",
+        "lintFix": "eslint ./index.js --fix",
         "start": "node index.js",
         "test": "NODE_ENV=test nyc --reporter=lcov  --reporter=text --check-coverage --lines 100 --functions 100 --branches 100 mocha --recursive ./tests",
         "update": "./node_modules/npm-check-updates/bin/ncu -a"
