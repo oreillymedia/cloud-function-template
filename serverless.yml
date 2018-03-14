@@ -23,7 +23,7 @@ package:
 
 functions:
   function_name:
-    handler: http
+    handler: helloWorld
     events:
       - http: path
 
@@ -32,7 +32,7 @@ functions:
   # before deploying this service through Serverless
 
   #second:
-  #  handler: event
+  #  handler: pubSub
   #  events:
   #    - event:
   #        eventType: providers/cloud.pubsub/eventTypes/topic.publish
