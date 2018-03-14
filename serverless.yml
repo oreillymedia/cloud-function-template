@@ -1,4 +1,4 @@
-service: gcf-nodejs # NOTE: Don't put the word "google" in here
+service: google-cloud-template # NOTE: Don't put the word "google" in here
 
 provider:
   name: google
@@ -9,6 +9,7 @@ provider:
 
 plugins:
   - serverless-google-cloudfunctions
+  - serverless-plugin-browserify
 
 # needs more granular excluding in production as only the serverless provider npm
 # package should be excluded (and not the whole node_modules directory)
@@ -22,8 +23,8 @@ package:
     - tests/**
 
 functions:
-  function_name:
-    handler: http
+  http:
+    handler: functions/httpHelloWorld.handler
     events:
       - http: path
 
