@@ -6,6 +6,5 @@
 *  @param {Function} callback function 
 */
 exports.handler = (event, callback) => {
-    console.log(`Hello World!`)
-    callback();
+    callback(null, `Hello ${event.data.name || 'World'}!`);
 };

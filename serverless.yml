@@ -1,4 +1,4 @@
-service: google-cloud-template # NOTE: Don't put the word "google" in here
+service: gcf-nodejs # NOTE: Don't put the word "google" in here
 
 provider:
   name: google
