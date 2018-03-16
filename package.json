@@ -7,7 +7,7 @@
     "lint": "eslint ./index.js",
     "lintFix": "eslint ./index.js --fix",
     "start": "node index.js",
-    "test": "NODE_ENV=test nyc --reporter=lcov  --reporter=text --check-coverage --lines 100 --functions 100 --branches 100 mocha --recursive ./tests",
+    "test": "NODE_ENV=test nyc --reporter=lcov  --reporter=text --check-coverage --lines 100 --functions 100 --branches 100 jest tests/",
     "update": "./node_modules/npm-check-updates/bin/ncu -a"
   },
   "repository": {
@@ -28,6 +28,7 @@
     "eslint": "^4.10.0",
     "jest": "^22.4.2",
     "nyc": "^11.4.1",
-    "npm-check-updates": "^2.12.1"
+    "npm-check-updates": "^2.12.1",
+    "supertest": "3.0.0"
   }
 }

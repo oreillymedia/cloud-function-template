@@ -6,5 +6,5 @@
 *  @param {Function} callback function 
 */
 exports.handler = (event, callback) => {
-    callback(null, `Hello ${event.data.name || 'World'}!`);
+    callback(`Hello ${event.data.name || 'World'}!`);
 };
