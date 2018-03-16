@@ -7,7 +7,7 @@
     "lint": "eslint ./index.js",
     "lintFix": "eslint ./index.js --fix",
     "start": "node index.js",
-    "test": "NODE_ENV=test nyc --reporter=lcov  --reporter=text --check-coverage --lines 100 --functions 100 --branches 100 mocha --recursive ./tests",
+    "test": "NODE_ENV=test nyc --reporter=lcov  --reporter=text --check-coverage --lines 100 --functions 100 --branches 100 jest tests/",
     "update": "./node_modules/npm-check-updates/bin/ncu -a"
   },
   "repository": {
@@ -21,14 +21,14 @@
   },
   "homepage": "https://github.com/oreillymedia/cloud-function-template#readme",
   "dependencies": {
-    "request": "^2.83.0",
-    "request-promise": "^4.2.2",
-    "serverless-google-cloudfunctions": "^1.1.1"
+    "serverless-google-cloudfunctions": "^1.1.1",
+    "serverless-plugin-browserify": "^1.1.3"
   },
   "devDependencies": {
     "eslint": "^4.10.0",
     "jest": "^22.4.2",
     "nyc": "^11.4.1",
-    "npm-check-updates": "^2.12.1"
+    "npm-check-updates": "^2.12.1",
+    "supertest": "3.0.0"
   }
 }
