@@ -5,6 +5,7 @@ describe('#httpHelloWorld.handler web request', () => {
         const mockRequest = {
             method: 'GET'
         };
+
         const mockResponse = {
             status: (code) => {
                 expect(code).toEqual(200);
@@ -16,6 +17,7 @@ describe('#httpHelloWorld.handler web request', () => {
                 }
             }
         };
+        
         httpHelloWorld.handler(mockRequest, mockResponse);
     })
 })

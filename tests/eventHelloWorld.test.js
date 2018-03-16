@@ -2,9 +2,8 @@ const eventHelloWorld = require('../functions/eventHelloWorld');
 
 describe('#eventHelloWorld.handler web request no data', () => {
     test('should return Hello World! when event.data.name is null', (done) => {
-        const data = {}
         const mockEvent = {
-            data
+            data: {}
         };
 
         function callback(data) {
