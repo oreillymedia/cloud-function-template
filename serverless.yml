@@ -33,7 +33,7 @@ functions:
   # before deploying this service through Serverless
 
   #second:
-  #  handler: event
+  #  handler: pubSub
   #  events:
   #    - event:
   #        eventType: providers/cloud.pubsub/eventTypes/topic.publish
