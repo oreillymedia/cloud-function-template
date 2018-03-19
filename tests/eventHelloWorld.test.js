@@ -9,7 +9,7 @@ describe('#eventHelloWorld.handler web request no data', () => {
         function callback(data) {
             expect(data).toBe('Hello World!');
             done();
-        } 
+        };
 
         eventHelloWorld.handler(mockEvent, callback);
     })
@@ -26,7 +26,7 @@ describe('#eventHelloWorld.handler pubsub request with data', () => {
         function callback(data) {
             expect(data).toBe('Hello Nurse!');
             done();
-        }
+        };
 
         eventHelloWorld.handler(mockEvent, callback);
     })
