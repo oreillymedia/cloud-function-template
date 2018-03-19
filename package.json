@@ -4,7 +4,7 @@
   "description": "cloud function template",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint ./index.js",
+    "lint": "eslint ./functions/**/*.js",
     "lintFix": "eslint ./index.js --fix",
     "start": "node index.js",
     "test": "NODE_ENV=test nyc --reporter=lcov  --reporter=text --check-coverage --lines 100 --functions 100 --branches 100 jest tests/",
