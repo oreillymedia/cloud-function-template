@@ -1,4 +1,4 @@
-const httpHelloWorld = require('../functions/httpHelloWorld');
+const cloudFunction = require('../');
 
 describe('#httpHelloWorld.handler web request', () => {
   test('should return 200 status and send Hello World!', (done) => {
@@ -18,6 +18,6 @@ describe('#httpHelloWorld.handler web request', () => {
       }
     };
     
-    httpHelloWorld.handler(mockRequest, mockResponse);
+    cloudFunction.httpHelloWorld(mockRequest, mockResponse);
   })
 })

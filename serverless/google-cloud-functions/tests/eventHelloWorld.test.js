@@ -1,4 +1,4 @@
-const eventHelloWorld = require('../functions/eventHelloWorld');
+const cloudFunction = require('../');
 
 describe('#eventHelloWorld.handler web request no data', () => {
   test('should return Hello World! when event.data.name is null', (done) => {
@@ -11,7 +11,7 @@ describe('#eventHelloWorld.handler web request no data', () => {
       done();
     };
 
-    eventHelloWorld.handler(mockEvent, callback);
+    cloudFunction.eventHelloWorld(mockEvent, callback);
   })
 })
 
@@ -28,6 +28,6 @@ describe('#eventHelloWorld.handler pubsub request with data', () => {
       done();
     };
 
-    eventHelloWorld.handler(mockEvent, callback);
+    cloudFunction.eventHelloWorld(mockEvent, callback);
   })
 })
