@@ -1,30 +1,24 @@
 service: gcf-nodejs # NOTE: Don't put the word "google" in here
 
 provider:
-  name: google
+  name: aws
   runtime: nodejs
-  project: strong-keyword-184513
-  # the path to the credentials file needs to be absolute
-  credentials: ~/.gcloud/keyfile.json
+  profile: playground
 
 plugins:
-  - serverless-google-cloudfunctions
+  - serverless-plugin-browserify
 
 # needs more granular excluding in production as only the serverless provider npm
 # package should be excluded (and not the whole node_modules directory)
 package:
+  individually: true
   exclude:
     - node_modules/**
     - .gitignore
     - .git/**
     - .eslintrc
     - .gcloudignore
-    - .serverless
-    - .vscode
-    - coverage
-    - Jenkinsfile
-    - README.md
-    - "**/tests"
+    - tests
 
 functions:
   http:
@@ -34,9 +28,7 @@ functions:
   event:
     handler: eventHelloWorld
     events:
-      - event:
-          eventType: providers/cloud.pubsub/eventTypes/topic.publish
-          resource: projects/strong-keyword-184513/topics/cloud-function-template
+      - event: path
 
   # NOTE: the following uses an "event" event (pubSub event in this case).
   # Please create the corresponding resources in the Google Cloud
