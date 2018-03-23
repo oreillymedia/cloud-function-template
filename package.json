@@ -1,0 +1,31 @@
+{
+  "name": "cloud-function-template",
+  "version": "0.0.1",
+  "description": "cloud function template",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint ./index.js",
+    "lintFix": "eslint ./index.js --fix",
+    "start": "node index.js",
+    "test": "NODE_ENV=test jest --coverage .",
+    "update": "./node_modules/npm-check-updates/bin/ncu -a"
+  },
+  "repository": {
+    "url": "git+https://github.com/oreillymedia/cloud-function-template.git",
+    "type": "git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oreillymedia/cloud-function-template/issues"
+  },
+  "homepage": "https://github.com/oreillymedia/cloud-function-template#readme",
+  "dependencies": {
+    "serverless-google-cloudfunctions": "^1.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.0",
+    "jest": "^22.4.2",
+    "npm-check-updates": "^2.12.1"
+  }
+}

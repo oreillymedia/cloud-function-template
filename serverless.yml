@@ -1,0 +1,59 @@
+service: gcf-nodejs # NOTE: Don't put the word "google" in here
+
+provider:
+  name: google
+  runtime: nodejs
+  project: strong-keyword-184513
+  # the path to the credentials file needs to be absolute
+  credentials: ~/.gcloud/keyfile.json
+
+plugins:
+  - serverless-google-cloudfunctions
+
+# needs more granular excluding in production as only the serverless provider npm
+# package should be excluded (and not the whole node_modules directory)
+package:
+  exclude:
+    - node_modules/**
+    - .gitignore
+    - .git/**
+    - .eslintrc
+    - .gcloudignore
+    - .serverless
+    - .vscode
+    - coverage
+    - Jenkinsfile
+    - README.md
+    - "**/tests"
+
+functions:
+  http:
+    handler: httpHelloWorld
+    events:
+      - http: path
+  event:
+    handler: eventHelloWorld
+    events:
+      - event:
+          eventType: providers/cloud.pubsub/eventTypes/topic.publish
+          resource: projects/strong-keyword-184513/topics/cloud-function-template
+
+  # NOTE: the following uses an "event" event (pubSub event in this case).
+  # Please create the corresponding resources in the Google Cloud
+  # before deploying this service through Serverless
+
+  #second:
+  #  handler: pubSub
+  #  events:
+  #    - event:
+  #        eventType: providers/cloud.pubsub/eventTypes/topic.publish
+  #        resource: projects/*/topics/my-topic
+
+# you can define resources, templates etc. the same way you would in a
+# Google Cloud deployment configuration
+#resources:
+#  resources:
+#    - type: storage.v1.bucket
+#      name: my-serverless-service-bucket
+#  imports:
+#    - path: my_template.jinja
