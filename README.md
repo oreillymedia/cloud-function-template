@@ -1,6 +1,6 @@
 # serverless-function-template
 
-## How to setup, write, test and deploy your own google cloud function
+## How to setup, write, test and deploy your own serverless functions
 
 ### Prepare your local machine
 
@@ -146,7 +146,7 @@ functions-emulator --help
 
 ### Creating a serverless project
 
-When starting a new serverless project first consider what feature or service your function will serve.  Check to see if a serverless project already exists for that feature or service.  If not create a new project using the ORM project template.
+When starting a new serverless project first consider what feature or service your functions will serve.  Check to see if a serverless project already exists for that feature or service.  If not create a new project using the ORM project template.
 
 Create a function from the ORM template 
 Pull down the ORM cloud function template and give it a unique named directory
@@ -166,7 +166,9 @@ Once set git init and create a repo in git oreillymedia organization and push yo
 
 During the development lifecycle we are using node 6.11.5 and es6 as standards for writing.  ESlint and jest are standards for linting and testing.
 
-Notice in the project template there is a functions directory, this stores the set of functions that server a similar feature or service.  By default there are 2 sample functions httpHelloWorld and eventHelloWorld.  http* is triggered by a web request while event is triggered by pubsub events.
+Notice in the project template there is a a single index.js module, this stores the set of functions that serve a similar feature or service.  By default there are 2 sample functions httpHelloWorld and eventHelloWorld.  http* is triggered by a web request while event is triggered by pubsub events.
+
+Cloud functions are limited to deploying functions from one module so when writing if multiple function deployments will reside in one project they must be exported from the main index.js.  AWS Lambda and Kubeless do not have this limitation and multiple js modules can be deployed simultaneously.  This is a current limitation with google cloud functions only
 
 We can use google-cloud-emulator to deploy and test a function locally to ensure it is working as expected.  Serverless offers this with their invoke local method but it does not support google cloud functions… yet.
 
