@@ -1,11 +1,13 @@
 {
-  "name": "cloud-function-template",
+  "name": "serverless-nodejs-chassis",
   "version": "0.0.1",
-  "description": "cloud function template",
+  "description": "serverless nodejs chassis",
   "main": "index.js",
   "scripts": {
+    "clean": "rm -rf node_modules coverage",
     "lint": "eslint ./index.js",
     "lintFix": "eslint ./index.js --fix",
+    "serverless": "npm install -g @google-cloud/functions-emulator serverless firebase-tools",
     "start": "node index.js",
     "test": "NODE_ENV=test jest --coverage .",
     "update": "./node_modules/npm-check-updates/bin/ncu -a"
